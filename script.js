@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import "./style.css";
+import chip from "./rotating-chips.gif"
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -11,7 +12,7 @@ renderer.setAnimationLoop(animate);
 renderer.render(scene, camera);
 
 const geometry = new THREE.BoxGeometry(1, 1, 1);
-const texture = new THREE.TextureLoader().load("./static/rotating-chips.gif");
+const texture = new THREE.TextureLoader().load(chip);
 const material = new THREE.MeshBasicMaterial({ map: texture });
 const cube = new THREE.Mesh(geometry, material);
 scene.add(cube);
